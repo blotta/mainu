@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+.mainu-logo-font {
+    font-family: 'Satisfy', cursive;
+    color: var(--primary-color);
+    font-size: 3em;
+}
