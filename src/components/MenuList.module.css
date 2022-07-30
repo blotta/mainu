@@ -1,0 +1,28 @@
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  margin: 0 auto;
+  max-width: 960px;
+  align-items: center;
+}
+
+.menu-list .item {
+    padding: .5em;
+    color: var(--text-color);
+    background-color: #fff;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: .2s all ease-in-out;
+    position: relative;
+}
+
+.menu-list .item:hover {
+    padding: 1.7em;
+    max-width: 410px;
+}

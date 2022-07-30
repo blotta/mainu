@@ -1,0 +1,36 @@
+.menu-form {
+    margin: 20px auto;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+    padding: 2em;
+    transition: all .2s ease-out;
+}
+
+.menu-form.showForm form {
+    display: block;
+}
+
+.menu-form form {
+    width: 100%;
+    display: none;
+}
+
+.menu-form .btn {
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 1em;
+    border: 1px solid var(--primary-color);
+    transition: .2s all ease-out;
+}
+.menu-form .btn:hover {
+    background-color: #fff;
+    color: var(--primary-color);
+    transform: scaleX(1.1);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}

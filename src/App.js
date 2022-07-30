@@ -3,9 +3,10 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import { useAuthContext } from "./hooks/useAuthContext";
 import Home from "./pages/home/Home";
+import MenuBuilder from "./pages/menuBuilder/MenuBuilder";
 import Login from "./pages/login/Login";
-import Menu from "./pages/menu/Menu";
 import Signup from "./pages/signup/Signup";
+import Menu from "./pages/menu/Menu";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -19,6 +20,10 @@ function App() {
             <Route
               path="/"
               element={user ? <Home /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/menu-builder/*"
+              element={user ? <MenuBuilder /> : <Navigate to="/login" />}
             />
 
             <Route path="/menu/*" element={<Menu />} />
