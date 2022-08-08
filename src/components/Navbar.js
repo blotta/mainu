@@ -4,6 +4,7 @@ import MainuLogo from "./MainuLogo";
 
 import styles from "./Navbar.module.css";
 import common from "../Common.module.css";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const { user } = useAuthContext();
@@ -16,6 +17,15 @@ export default function Navbar() {
           <>
             <li className={common["mainu-font"] + " " + styles.title}>
               <MainuLogo />
+            </li>
+            <li>
+              {" "}
+              <NavLink
+                to="/"
+                className={(state) => (state.isActive ? styles.active : "")}
+              >
+                Home
+              </NavLink>
             </li>
             <li>{user.email}</li>
             <li>

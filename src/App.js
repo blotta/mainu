@@ -22,7 +22,7 @@ function App() {
               element={user ? <Home /> : <Navigate to="/login" />}
             />
             <Route
-              path="/menu-builder/*"
+              path="/menu-builder/:id"
               element={user ? <MenuBuilder /> : <Navigate to="/login" />}
             />
 

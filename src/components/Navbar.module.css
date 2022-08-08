@@ -10,16 +10,22 @@
   max-width: 960px;
   align-items: center;
 }
+.navbar li {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 .title {
-  margin-right: auto;
+  margin-right: auto !important;
   font-weight: bold;
   letter-spacing: 1px;
   font-size: 1.2em;
 }
-.navbar button, .navbar a {
-  margin-left: 16px;
-}
+
 .navbar a {
   color: #333;
   text-decoration: none;
+}
+
+.navbar li a.active {
+  color: var(--primary-color);
 }

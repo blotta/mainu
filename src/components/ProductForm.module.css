@@ -1,10 +1,19 @@
-.products-form {
-    max-width: 500px;
-    text-align: left;
-    padding: 10px;
+.productForm {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.products-form button {
+.productForm form {
+  flex-grow: 1;
+}
+
+.productForm form button {
   background: var(--primary-color);
   color: #fff;
+}
+
+.productForm > button {
+  display: block;
 }

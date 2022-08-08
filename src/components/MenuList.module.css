@@ -23,6 +23,6 @@
 }
 
 .menu-list .item:hover {
-    padding: 1.7em;
-    max-width: 410px;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
 }

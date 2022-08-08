@@ -1,0 +1,42 @@
+.menu-builder-layout {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.menu-designer-section {
+    flex-grow: 1;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.menu-designer-section::-webkit-scrollbar {
+    display: none;
+}
+
+.menu-products-section {
+    padding: 6px;
+    border-left: 2px solid var(--primary-color);
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-products-section #addProduct {
+    display: inline-block;
+    text-align: right;
+    align-self: flex-end;
+    margin: 3px;
+    color: var(--text-color);
+    background-color: white;
+    border: 1px solid var(--highlight-color);
+    padding: 0.2em;
+    cursor: pointer;
+}
+
+.menu-products-section #addProduct:hover {
+    border-color: var(--primary-color);
+    background-color: var(--highlight-color);
+    color: black;
+}

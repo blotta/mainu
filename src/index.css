@@ -5,11 +5,14 @@
   --heading-color: #444;
   --text-color: #999;
   --primary-color: #5cac2d;
-  --highlight-color: #d13267;
+  --highlight-color: #bceba1;
   --bg-color: #f4f4f4;
 }
 
 /* base styles */
+html, body, #root {
+    height: 100%;
+}
 body {
   font-family: Poppins, sans-serif;
   margin: 0;
