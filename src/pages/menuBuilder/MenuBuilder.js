@@ -7,9 +7,14 @@ import { useCollection } from "../../hooks/useCollection";
 // styles
 import "./MenuBuilder.css";
 import { useEffect, useState } from "react";
+import MenuSections from "./MenuSections";
+import { useFirestore } from "../../hooks/useFirestore";
+import { useDocument } from "../../hooks/useDocument";
 
 export default function MenuBuilder() {
   const { id } = useParams();
+  const { updateDocument } = useFirestore("menus");
+  const { document: menu } = useDocument("menus", id);
   const { documents: products } = useCollection("products");
 
   const [showProductForm, setShowProductForm] = useState(false);
@@ -23,13 +28,36 @@ export default function MenuBuilder() {
   }, [productEditing]);
 
   const finishedProductForm = (pid) => {
-    setProductEditing(null)
+    setProductEditing(null);
+  };
+
+  const addSection = (sec) => {
+    updateDocument(id, { sections: [...menu.sections, sec] });
+  };
+
+  const updateSection = (sec) => {
+    const idx = menu.sections.findIndex(s => s.id === sec.id);
+    const secs = [...menu.sections];
+    secs.splice(idx, 1, sec)
+    updateDocument(id, {sections: secs})
+  };
+
+  if (!menu) {
+    return <div>loading...</div>;
   }
 
   return (
     <div className="menu-builder-layout">
       <div className="menu-designer-section">
         <MenuDesigner menuId={id} />
+      </div>
+      <div className="menu-sections-section">
+        <h4>Menu Sections</h4>
+        <MenuSections
+          sections={menu.sections}
+          addSection={addSection}
+          updateSection={updateSection}
+        />
       </div>
       <div className="menu-products-section">
         <h4>Products</h4>

@@ -16,12 +16,10 @@ export default function ProductForm({ productId, finishedForm }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(name, parseFloat(price));
     const sentProduct = {
       name,
       price: parseFloat(price).toFixed(2),
     };
-    console.log(pid);
     if (pid === "new") {
       await addDocument(sentProduct);
     } else {
@@ -60,7 +58,7 @@ export default function ProductForm({ productId, finishedForm }) {
         </label>
         <button className="btn">{pid === "new" ? "Add" : "Update"}</button>
       </form>
-      <button className="btn" onClick={() => finishedForm(pid)}>
+      <button className="btn btn-warning" onClick={() => finishedForm(pid)}>
         Cancel
       </button>
     </div>

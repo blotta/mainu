@@ -1,0 +1,13 @@
+.menuSectionForm label {
+    text-align: left;
+}
+
+.menuSectionForm select {
+    display: block;
+    padding: .5em;
+}
+
+.actionButtons {
+    display: flex;
+    justify-content: space-between;
+}

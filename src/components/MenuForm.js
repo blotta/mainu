@@ -22,7 +22,7 @@ export default function MenuForm({ className }) {
       restaurantName,
       name: menuName,
       createdBy: user.uid,
-      products: [],
+      sections: []
     };
     await addDocument(newMenu);
   };

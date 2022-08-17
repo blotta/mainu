@@ -3,7 +3,6 @@ import { useDocument } from "../../hooks/useDocument";
 
 export default function MenuDesigner({ menuId }) {
   const { document: menu, isPending, error } = useDocument("menus", menuId);
-  console.log(menu);
   return (
     <div>
       {isPending && <p>Loading...</p>}

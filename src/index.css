@@ -7,6 +7,8 @@
   --primary-color: #5cac2d;
   --highlight-color: #bceba1;
   --bg-color: #f4f4f4;
+
+  --warning-color: rgb(212, 182, 46);
 }
 
 /* base styles */
@@ -47,6 +49,16 @@ ul {
   background-color: var(--primary-color);
 }
 
+.btn-warning {
+  color: var(--warning-color);
+  border-color: var(--warning-color);
+}
+
+.btn-warning:hover {
+  color: #fff;
+  background-color: var(--warning-color);
+}
+
 /* forms */
 label {
   display: block;
@@ -56,7 +68,7 @@ label span {
   display: block;
   margin-bottom: 6px;
 }
-input, textarea {
+input, textarea, select, option {
   padding: 8px 6px;
   font-size: 1em;
   color: #777;

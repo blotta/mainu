@@ -15,6 +15,12 @@
     display: none;
 }
 
+.menu-sections-section {
+    width: 300px;
+    border-left: 2px solid var(--primary-color);
+    padding: 6px;
+}
+
 .menu-products-section {
     padding: 6px;
     border-left: 2px solid var(--primary-color);
@@ -22,6 +28,7 @@
     display: flex;
     flex-direction: column;
 }
+
 
 .menu-products-section #addProduct {
     display: inline-block;
