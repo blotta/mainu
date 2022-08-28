@@ -8,13 +8,11 @@ import { useCollection } from "../../hooks/useCollection";
 import "./MenuBuilder.css";
 import { useEffect, useState } from "react";
 import MenuSections from "./MenuSections";
-import { useFirestore } from "../../hooks/useFirestore";
-import { useDocument } from "../../hooks/useDocument";
+import { useMenu } from "../../hooks/useMenu";
 
 export default function MenuBuilder() {
   const { id } = useParams();
-  const { updateDocument } = useFirestore("menus");
-  const { document: menu } = useDocument("menus", id);
+  const {menu, addSection, updateSection, moveSectionBefore} = useMenu(id);
   const { documents: products } = useCollection("products");
 
   const [showProductForm, setShowProductForm] = useState(false);
@@ -31,16 +29,6 @@ export default function MenuBuilder() {
     setProductEditing(null);
   };
 
-  const addSection = (sec) => {
-    updateDocument(id, { sections: [...menu.sections, sec] });
-  };
-
-  const updateSection = (sec) => {
-    const idx = menu.sections.findIndex(s => s.id === sec.id);
-    const secs = [...menu.sections];
-    secs.splice(idx, 1, sec)
-    updateDocument(id, {sections: secs})
-  };
 
   if (!menu) {
     return <div>loading...</div>;
@@ -57,6 +45,7 @@ export default function MenuBuilder() {
           sections={menu.sections}
           addSection={addSection}
           updateSection={updateSection}
+          moveSectionBefore={moveSectionBefore}
         />
       </div>
       <div className="menu-products-section">
